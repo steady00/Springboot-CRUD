@@ -37,7 +37,6 @@ public class TodoController {
 	
 	@GetMapping("edit/{id}")
 	public String edit(Model model, @PathVariable int id) {
-		System.out.println(todoService.get(id));
 		//model.addAttribute("todos", todoService.get(id));
 		model.addAttribute("todo", todoService.get(id));
 		return "todo/listEdit";
@@ -46,7 +45,6 @@ public class TodoController {
 	
 	@PostMapping("save")
 	public String save(@ModelAttribute Todo todo) {
-		System.out.println("INI_SAVE"+ todo);
 		todoService.saveTodo(todo);
 		return "redirect:list-all";
 	}
@@ -54,7 +52,6 @@ public class TodoController {
 	
 	@PostMapping("update")
 	public String update(@ModelAttribute Todo todo) {
-		System.out.println("Update" + todoService.updateTodo(todo));
 		todoService.updateTodo(todo);
 		return "redirect:list-all";
 	}
