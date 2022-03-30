@@ -17,21 +17,28 @@ public class User {
 	
 	@Column( nullable = false)
 	private String password;
+	
+	@Column( nullable = false)
+	private String role;
 
 	
-	public User() {
-		super();
-	}
-	
-	public User(int id, String username, String password) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-	}
+//	public User() {
+//		super();
+//	}
+//	
+//	public User(int id, String username, String password) {
+//		super();
+//		this.id = id;
+//		this.username = username;
+//		this.password = password;
+//	}
 
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
@@ -48,6 +55,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	public String getRole() {
+		return role;
 	}
 	
 	
